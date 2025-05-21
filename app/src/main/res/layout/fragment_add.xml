@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/formContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <!-- Title -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Title"
+                    app:boxBackgroundColor="@android:color/transparent"
+                    app:boxStrokeColor="@color/white"
+                    app:hintTextColor="@color/white"
+                    app:startIconDrawable="@drawable/ic_title"
+                    app:startIconTint="@color/white">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapSentences"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white_50"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Description -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Description"
+                    app:boxBackgroundColor="@android:color/transparent"
+                    app:boxStrokeColor="@color/white"
+                    app:hintTextColor="@color/white"
+                    app:startIconDrawable="@drawable/ic_description"
+                    app:startIconTint="@color/white">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:minLines="3"
+                        android:gravity="top"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white_50"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Location Spinner (Без иконки) -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="59dp"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Location in IITU"
+                    app:boxBackgroundColor="@android:color/transparent"
+                    app:boxStrokeColor="@color/white"
+                    app:hintTextColor="@color/white">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/spinnerLocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@android:color/transparent"
+                            android:minHeight="48dp"
+                            android:spinnerMode="dropdown"
+                            app:hintTextColor="@color/black" />
+                    </LinearLayout>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Lost/Found Radio Group -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="1dp">
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/radioLost"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="I lost"
+                            android:textColor="#FDF7F7"
+                            android:minHeight="48dp"
+                            app:buttonTint="@color/white"/>
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/radioFound"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="I found"
+                            android:textColor="#FDF7F7"
+                            android:minHeight="48dp"
+                            android:buttonTint="@color/white"/>
+                    </RadioGroup>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Reward -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Reward (optional)"
+                    app:boxBackgroundColor="@android:color/transparent"
+                    app:boxStrokeColor="@color/white"
+                    app:hintTextColor="@color/white"
+                    app:startIconDrawable="@drawable/ic_money"
+                    app:startIconTint="@color/white">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etReward"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white_50"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <!-- Upload Photo Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUploadPhoto"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Upload Photo"
+                    app:backgroundTint="@android:color/transparent"
+                    android:textColor="@color/white"
+                    app:cornerRadius="28dp"
+                    app:icon="@drawable/ic_camera"
+                    app:iconGravity="start"
+                    app:iconTint="@color/white"
+                    app:rippleColor="@color/green_500"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="1dp"/>
+
+                <!-- Image Preview -->
+                <ImageView
+                    android:id="@+id/imagePreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="16dp"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    android:background="@drawable/image_preview_background"
+                    android:contentDescription="Selected image preview"/>
+
+                <!-- Submit Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Submit"
+                    app:backgroundTint="@color/green_500"
+                    app:cornerRadius="28dp"
+                    app:icon="@drawable/ic_send"
+                    app:iconGravity="end"
+                    app:iconTint="@color/white"
+                    app:rippleColor="@color/green_700"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</ScrollView>

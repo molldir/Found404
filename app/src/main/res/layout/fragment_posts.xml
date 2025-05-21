@@ -1,0 +1,147 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/green_700"
+    android:padding="8dp">
+
+    <!-- Блок поиска и фильтров -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/filterCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        style="@style/Widget.App.Card">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- SearchView -->
+            <SearchView
+                android:id="@+id/searchField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:queryHint="Search by Title, Description or Location"
+                style="@style/Widget.App.SearchView"
+                android:background="@drawable/bg_search_view"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white_50" />
+
+            <!-- Кнопки фильтров -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <!-- Фильтр по дате -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDateFilter"
+                    style="@style/Widget.App.Button.Outlined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Date"
+                    app:backgroundTint="@color/green_900"
+                    android:textColor="@color/white"
+                    app:icon="@drawable/ic_calendar"
+                    app:iconGravity="textStart"
+                    app:iconTint="@color/white" />
+
+                <!-- Фильтр по местоположению -->
+
+                <!-- Сброс фильтров -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLocationFilter"
+                    style="@style/Widget.App.Button.Outlined"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Location"
+                    app:backgroundTint="@color/green_900"
+                    android:textColor="@color/white"
+                    app:icon="@drawable/ic_location"
+                    app:iconGravity="textStart"
+                    app:iconTint="@color/white" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnResetFilters"
+                    style="@style/Widget.App.Button.Outlined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Reset"
+                    app:backgroundTint="@color/green_900"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="8dp"
+                    app:icon="@drawable/ic_reset"
+                    app:iconGravity="textStart"
+                    app:iconTint="@color/white" />
+            </LinearLayout>
+
+            <!-- Текущее местоположение -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_location"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/currentLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IITU"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Переключатель статуса -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSwitchPostType"
+        style="@style/Widget.App.Button.Outlined"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Found Items"
+        app:backgroundTint="@color/green_900"
+        android:textColor="@color/white"
+        android:layout_marginBottom="8dp"
+        app:icon="@drawable/ic_switch"
+        app:iconGravity="textStart"
+        app:iconTint="@color/white"
+        app:rippleColor="@color/white" />
+
+    <!-- Текст текущего статуса -->
+    <TextView
+        android:id="@+id/tvPostType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lost Items"
+        app:backgroundTint="@color/green_900"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:padding="8dp"
+        android:layout_marginBottom="4dp" />
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerPosts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp" />
+</LinearLayout>
