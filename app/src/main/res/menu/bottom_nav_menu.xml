@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/postsFragment"
+        android:icon="@android:drawable/ic_menu_compass"
+        android:title="Posts"
+        android:titleCondensed="Posts"
+        android:checkable="true" />
+
+    <item
+        android:id="@+id/addItemFragment"
+        android:icon="@android:drawable/ic_input_add"
+        android:title="Add"
+        android:titleCondensed="Add"
+        android:checkable="true" />
+
+    <item
+        android:id="@+id/myItemsFragment"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Mенің"
+        android:titleCondensed="My"
+        android:checkable="true" />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_person"
+        android:title="Profile"
+        android:titleCondensed="Settings"
+        android:checkable="true" />
+</menu>
