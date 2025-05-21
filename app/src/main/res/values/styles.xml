@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ShapeAppearanceOverlay.Circle" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="AlertDialogTheme" parent="ThemeOverlay.Material3.Dialog.Alert">
+        <item name="android:windowBackground">@color/green_500</item>
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+
+    <!-- Стиль для MaterialCardView -->
+    <style name="Widget.App.Card" parent="Widget.MaterialComponents.CardView">
+    <item name="cardBackgroundColor">@color/green_500</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="strokeColor">@color/green_700</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="Widget.App.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="iconTint">@color/green_500</item>
+        <item name="strokeColor">@color/green_500</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="rippleColor">@color/green_700</item>
+    </style>
+
+    <!-- Стиль для TextView (статус) -->
+    <style name="TextAppearance.App.Status" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/green_500</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Стиль для SearchView -->
+    <style name="Widget.App.SearchView" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/green_500</item>
+        <item name="hintTextColor">@color/green_500</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+</resources>
